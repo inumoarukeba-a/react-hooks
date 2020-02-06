@@ -1,5 +1,6 @@
 import React from 'react';
-import EffectClass from './components/EffectClass';
+import EffectMouseEvent from './components/EffectMouseEvent';
+// import EffectClass from './components/EffectClass';
 // import Counter from "./components/Counter"
 // import CounterHook from "./components/CounterHook";
 // import FormHook from "./components/FormHook";
@@ -12,7 +13,8 @@ const App = () => {
       {/* <CounterHook /> */}
       {/* <FormHook /> */}
       {/* <EffectHook /> */}
-      <EffectClass />
+      {/* <EffectClass /> */}
+      <EffectMouseEvent />
     </div>
   );
 }
