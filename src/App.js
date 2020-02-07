@@ -1,5 +1,6 @@
 import React from 'react';
-import DataFetch from './components/DataFetch';
+import DataFetchByid from './components/DataFetchByid';
+// import DataFetch from './components/DataFetch';
 // import EffectMouseEvent from './components/EffectMouseEvent';
 // import EffectClass from './components/EffectClass';
 // import Counter from "./components/Counter"
@@ -16,7 +17,8 @@ const App = () => {
       {/* <EffectHook /> */}
       {/* <EffectClass /> */}
       {/* <EffectMouseEvent /> */}
-      <DataFetch />
+      {/* <DataFetch /> */}
+      <DataFetchByid />
     </div>
   );
 }
