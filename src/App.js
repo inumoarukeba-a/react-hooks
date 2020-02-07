@@ -1,5 +1,6 @@
 import React from 'react';
-import EffectMouseEvent from './components/EffectMouseEvent';
+import DataFetch from './components/DataFetch';
+// import EffectMouseEvent from './components/EffectMouseEvent';
 // import EffectClass from './components/EffectClass';
 // import Counter from "./components/Counter"
 // import CounterHook from "./components/CounterHook";
@@ -14,7 +15,8 @@ const App = () => {
       {/* <FormHook /> */}
       {/* <EffectHook /> */}
       {/* <EffectClass /> */}
-      <EffectMouseEvent />
+      {/* <EffectMouseEvent /> */}
+      <DataFetch />
     </div>
   );
 }
