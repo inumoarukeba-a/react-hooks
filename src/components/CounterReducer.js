@@ -1,12 +1,19 @@
 import React, { useReducer } from "react";
 
-const initialState = 0;
+const initialState = {
+  firstCounter: 0,
+  secondCounter: 10
+};
 const reducer = (state, action) => {
-  switch (action) {
-    case "increment":
-      return state + 1;
-    case "decrement":
-      return state - 1;
+  switch (action.type) {
+    case "increment1":
+      return { ...state, firstCounter: state.firstCounter + action.value };
+    case "decrement1":
+      return { ...state, firstCounter: state.firstCounter - action.value };
+    case "increment2":
+      return { ...state, secondCounter: state.secondCounter + action.value };
+    case "decrement2":
+      return { ...state, secondCounter: state.secondCounter - action.value };
     case "reset":
       return initialState;
     default:
@@ -18,10 +25,21 @@ function CounterReducer() {
   const [count, dispatch] = useReducer(reducer, initialState);
   return (
     <div>
-      {count}
-      <button onClick={() => dispatch("increment")}>カウント +</button>
-      <button onClick={() => dispatch("decrement")}>カウント -</button>
-      <button onClick={() => dispatch("reset")}>リセット</button>
+      <h1>{count.firstCounter}</h1>
+      <h1>{count.secondCounter}</h1>
+      <button onClick={() => dispatch({ type: "increment1", value: 1 })}>
+        カウント +
+      </button>
+      <button onClick={() => dispatch({ type: "decrement1", value: 1 })}>
+        カウント +
+      </button>
+      <button onClick={() => dispatch({ type: "increment2", value: 10 })}>
+        カウント +
+      </button>
+      <button onClick={() => dispatch({ type: "decrement2", value: 10 })}>
+        カウント -
+      </button>
+      <button onClick={() => dispatch({ type: "reset" })}>リセット</button>
     </div>
   );
 }
