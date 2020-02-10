@@ -1,26 +1,22 @@
-import React from 'react';
-import DataFetchByid from './components/DataFetchByid';
-// import DataFetch from './components/DataFetch';
-// import EffectMouseEvent from './components/EffectMouseEvent';
-// import EffectClass from './components/EffectClass';
-// import Counter from "./components/Counter"
-// import CounterHook from "./components/CounterHook";
-// import FormHook from "./components/FormHook";
-// import EffectHook from './components/EffectHook';
+import React, { useState, createContext } from "react";
+import ComponentC from "./components/ComponentC";
+
+export const UserContext = createContext();
+export const LanguageContext = createContext();
 
 const App = () => {
+  const [user, setUser] = useState({ name: "小林", age: "32" });
+  const [language, setLanguage] = useState("日本語");
+
   return (
     <div className="App">
-      {/* <Counter /> */}
-      {/* <CounterHook /> */}
-      {/* <FormHook /> */}
-      {/* <EffectHook /> */}
-      {/* <EffectClass /> */}
-      {/* <EffectMouseEvent /> */}
-      {/* <DataFetch /> */}
-      <DataFetchByid />
+      <UserContext.Provider value={user}>
+        <LanguageContext.Provider value={language}>
+          <ComponentC />
+        </LanguageContext.Provider>
+      </UserContext.Provider>
     </div>
   );
-}
+};
 
 export default App;
